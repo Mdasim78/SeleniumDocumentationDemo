@@ -10,12 +10,10 @@ public class RegisterPageTest extends BaseTest{
 	
 	
 	@Test
-	public void testUserRegistration() {
+	public void testUserRegistration() throws InterruptedException {
 		
-		System.setProperty("driver.chrome.driver", "C:\\Users\\skmoh\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-		driver.get("https://demo.automationtesting.in/Register.html");
 		RegisterPage registrationPage = new RegisterPage(driver);
-		
+
 		registrationPage.enterFirstName("Mohammed");
 		registrationPage.enterLastName("Asim");
 		registrationPage.enterAddress("demo address");

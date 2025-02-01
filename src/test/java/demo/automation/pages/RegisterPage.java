@@ -1,11 +1,10 @@
 package demo.automation.pages;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
 import demo.automation.elements.RegisterPageElements;
 
 public class RegisterPage {
@@ -53,14 +52,16 @@ public class RegisterPage {
 
 	public void selectLanguages(String... languages) {
 		driver.findElement(RegisterPageElements.languages_msdropDown).click();
-		for(String language : languages) {
-			try {
+		
+		try {
+			for(String language : languages) {
 				driver.findElement(RegisterPageElements.getLanguageOption(language)).click();
 			}
-			catch(NotFoundException e) {
-				System.out.println("language not found");
 			}
+		catch(NoSuchElementException e) {
+			System.out.println("language not found");
 		}
+		
 	}
 
 	public void selectSkill(String skill) {
@@ -74,7 +75,6 @@ public class RegisterPage {
 			driver.findElement(RegisterPageElements.country_dropDown).click();
 			driver.findElement(RegisterPageElements.country_searchField).sendKeys(country);
 			driver.findElement(RegisterPageElements.country_searchField).sendKeys(Keys.ENTER);
-			//new Actions(driver).keyDown(Keys.ENTER);
 		}
 		catch (NotFoundException e) {
 			System.out.println("country not found");
@@ -107,4 +107,6 @@ public class RegisterPage {
 	public void save() {
 		driver.findElement(RegisterPageElements.save_btn).click();
 	}
+	
+
 }

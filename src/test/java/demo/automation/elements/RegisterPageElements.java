@@ -24,11 +24,13 @@ public class RegisterPageElements {
 	public static final By save_btn = By.id("submitbtn");
 	public static final By refresh_btn = By.id("Button1");
 	
+	//get hobbies xpath
 	public static By getHubbyCheckBox(String hobby) {
 		String hobbies = hobby.substring(0,1).toUpperCase()+hobby.substring(1).toLowerCase();
 		return By.xpath("//input[@value='"+hobbies+"']");
 	}
 	
+	//get languages xpath
 	public static By getLanguageOption(String language) {
 		String languages = language.substring(0,1).toUpperCase()+language.substring(1).toLowerCase();
 		return By.xpath("//a[text()='"+languages+"']");
