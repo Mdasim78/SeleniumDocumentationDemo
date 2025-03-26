@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage('build'){
 			steps{
-				echo "test build"
+				echo "test build on branch master"
 			}
 	}
 }
