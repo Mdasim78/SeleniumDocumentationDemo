@@ -6,5 +6,6 @@ pipeline{
 			steps{
 				echo "test build on branch master"
 			}
+		}
 	}
 }
