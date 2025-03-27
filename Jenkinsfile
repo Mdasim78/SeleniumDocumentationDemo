@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage('build'){
 			steps{
-				echo "test build on branch master"
+				echo "this will print on all branch"
 			}
 		}
 	}
